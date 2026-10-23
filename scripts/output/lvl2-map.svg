@@ -1,0 +1,50 @@
+<svg viewBox="0 0 942 638" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Cascadia Mono, Consolas, ui-monospace, monospace">
+<title>K-67 VERTICAL SLICE — ELEVATOR DESCENT &amp; CORE ACCESS — top-down schematic to scale.</title>
+<defs><pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M56 0H0V56" fill="none" stroke="#34342a" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="942" height="638" fill="#141410"/>
+<text x="30" y="42" fill="#e8b23a" font-size="22" font-weight="700" letter-spacing="1">OSL PHASE</text>
+<text x="31" y="64" fill="#9a9788" font-size="12.5" letter-spacing="1.5">K-67 VERTICAL SLICE — ELEVATOR DESCENT &amp; CORE ACCESS · TOP-DOWN · 1 CELL = 1 M</text>
+<rect x="70" y="90" width="672" height="448" fill="url(#grid)" opacity="0.5"/>
+<rect x="294" y="90" width="224" height="448" fill="rgba(232,178,58,0.045)" stroke="#e8b23a" stroke-width="2"/>
+<text x="310" y="114" fill="#e8b23a" font-size="15" font-weight="700">CENTRAL ELEVATOR SHAFT</text>
+<text x="310" y="131" fill="#9a9788" font-size="11">8 × 16 m</text>
+<rect x="70" y="202" width="224" height="224" fill="rgba(232,178,58,0.045)" stroke="#e8b23a" stroke-width="2"/>
+<text x="86" y="226" fill="#e8b23a" font-size="15" font-weight="700">SUB-LEVEL CONTROL BOOTH</text>
+<text x="86" y="243" fill="#9a9788" font-size="11">8 × 8 m</text>
+<rect x="518" y="202" width="224" height="224" fill="rgba(232,178,58,0.045)" stroke="#e8b23a" stroke-width="2"/>
+<text x="534" y="226" fill="#e8b23a" font-size="15" font-weight="700">RESEARCH ANTECHAMBER</text>
+<text x="534" y="243" fill="#9a9788" font-size="11">8 × 8 m</text>
+<line x1="294" y1="272.0" x2="294" y2="314.0" stroke="#e8b23a" stroke-width="6" stroke-linecap="square"/>
+<text x="304" y="297.0" fill="#e8b23a" font-size="11" font-weight="700">BOOTH HATCH</text>
+<line x1="518" y1="286" x2="518" y2="342" stroke="#ff3b30" stroke-width="6" stroke-linecap="square"/>
+<text x="528" y="318.0" fill="#ff3b30" font-size="11" font-weight="700">RESEARCH AIRLOCK</text>
+<rect x="154" y="258" width="42.0" height="42.0" fill="#1b1b15" stroke="#e8b23a" stroke-width="1.5"/>
+<text x="175.0" y="283.0" fill="#e8b23a" font-size="9" text-anchor="middle">EMERGENCY WINCH</text>
+<rect x="112.0" y="356.0" width="84" height="42.0" fill="#1b1b15" stroke="#e8b23a" stroke-width="1.5"/>
+<text x="154.0" y="381.0" fill="#e8b23a" font-size="11" text-anchor="middle">SERVER RACKS</text>
+<rect x="378" y="202" width="28" height="224" fill="#1b1b15" stroke="#e8b23a" stroke-width="1.5"/>
+<text x="392.0" y="318.0" fill="#e8b23a" font-size="9" text-anchor="middle">MAINTENANCE LADDER</text>
+<rect x="350" y="426" width="112" height="84" fill="none" stroke="#e8b23a" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.8"/>
+<text x="358" y="444" fill="#e8b23a" font-size="11" opacity="0.85">COLLAPSED CAR CAGE</text>
+<rect x="574" y="258" width="56" height="28" fill="#1b1b15" stroke="#e8b23a" stroke-width="1.5"/>
+<text x="602.0" y="276.0" fill="#e8b23a" font-size="11" text-anchor="middle">DECON BENCH</text>
+<rect x="658" y="356.0" width="42.0" height="42.0" fill="#1b1b15" stroke="#e8b23a" stroke-width="1.5"/>
+<text x="679.0" y="381.0" fill="#e8b23a" font-size="9" text-anchor="middle">SUIT CHARGER</text>
+<circle cx="173.6" cy="280.4" r="4.5" fill="#e8b23a"/>
+<text x="181.6" y="284.4" fill="#e8b23a" font-size="10.5" font-weight="600">MANUAL OVERRIDE LEVER</text>
+<circle cx="131.6" cy="375.6" r="4.5" fill="#e8b23a"/>
+<text x="139.6" y="379.6" fill="#e8b23a" font-size="10.5" font-weight="600">AUDIO LOG — MILLER'S WARNING</text>
+<circle cx="504.0" cy="274.8" r="4.5" fill="#e8b23a"/>
+<text x="512.0" y="278.8" fill="#e8b23a" font-size="10.5" font-weight="600">BIOMETRIC SCANNER</text>
+<path d="M 350 160.0 L 336.0 291.6 L 168.0 286.0 L 336.0 291.6 L 350 160.0 L 448.0 160.0 L 478.8 314.0 L 602 314.0" fill="none" stroke="#e8b23a" stroke-width="2" stroke-dasharray="6 4" opacity="0.85"/>
+<circle cx="350" cy="160.0" r="10" fill="#141410" stroke="#e8b23a" stroke-width="2"/>
+<text x="350" y="164.0" fill="#e8b23a" font-size="11" font-weight="700" text-anchor="middle">1</text>
+<circle cx="168.0" cy="286" r="10" fill="#141410" stroke="#e8b23a" stroke-width="2"/>
+<text x="168.0" y="290" fill="#e8b23a" font-size="11" font-weight="700" text-anchor="middle">2</text>
+<circle cx="478.8" cy="314" r="10" fill="#141410" stroke="#e8b23a" stroke-width="2"/>
+<text x="478.8" y="318" fill="#e8b23a" font-size="11" font-weight="700" text-anchor="middle">3</text>
+<text x="70" y="568" fill="#e8b23a" font-size="13" font-weight="700" letter-spacing="1">BEATS &amp; OBJECTIVES</text>
+<text x="70" y="588" fill="#e8b23a" font-size="11.5">1. Descent entry — shaft overview — [OBJ: Drop through the shaft entry and reach the sub-level control booth.]</text>
+<text x="70" y="606" fill="#e8b23a" font-size="11.5">2. Control booth — winching the cage — [OBJ: Activate the emergency winch in the control booth to clear the shaft.]</text>
+<text x="70" y="624" fill="#e8b23a" font-size="11.5">3. Airlock biometrics — opening research sub-level — [OBJ: Authenticate with your Sec-1 Badge and Kael's relay to open the research antechamber.]</text>
+</svg>

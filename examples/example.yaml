@@ -1,0 +1,101 @@
+project: "Tutorial"
+level: "Example — Minimal 2-Room Level"
+metric:
+  unit_m: 1
+  operative_m: 1.8
+  wall: "2x3"
+  door: "2x1.2"
+speakers:
+  guide:
+    color: "#e8b23a"
+  player:
+    color: "#68d391"
+notes:
+  - "Minimal example: 2 rooms, 3 beats, 1 gated door."
+  - "Demonstrates: spawn, interact beat with state gating, and completion."
+rooms:
+  - id: "start"
+    label: "ENTRY ROOM"
+    x: 0
+    y: 0
+    w: 10
+    h: 8
+  - id: "goal"
+    label: "GOAL ROOM"
+    x: 10
+    y: 0
+    w: 8
+    h: 8
+features:
+  - type: "door"
+    label: "LOCKED DOOR"
+    x: 10
+    y: 3
+    h: 2
+    opens_when:
+      key_found: true
+  - type: "block"
+    label: "CONSOLE"
+    x: 3
+    y: 4
+    w: 1.5
+    h: 0.8
+    height: 1.2
+props:
+  - label: "ACCESS KEYCARD"
+    x: 3.7
+    y: 4.4
+beats:
+  - n: 1
+    x: 2
+    y: 4
+    label: "Arrival"
+    objective: "Locate the access keycard."
+    trigger_type: "auto"
+    radius: 2.5
+    set_state:
+      arrived: true
+    dialogue:
+      - speaker: "guide"
+        name: "GUIDE"
+        channel: "TUTORIAL"
+        text: "Welcome. You'll need the access keycard to proceed through the locked door."
+  - n: 2
+    x: 3.7
+    y: 4.4
+    label: "Keycard pickup"
+    objective: "Use the keycard to unlock the door."
+    trigger_type: "interact"
+    action_label: "PICK UP KEYCARD"
+    radius: 1.5
+    requires_state:
+      arrived: true
+    set_state:
+      key_found: true
+    dialogue:
+      - speaker: "player"
+        name: "PLAYER"
+        channel: "SELF"
+        text: "Got it. The door should open now."
+  - n: 3
+    x: 14
+    y: 4
+    label: "Goal reached"
+    objective: "Mission complete."
+    trigger_type: "auto"
+    radius: 2.5
+    requires_state:
+      key_found: true
+    set_state:
+      complete: true
+    dialogue:
+      - speaker: "guide"
+        name: "GUIDE"
+        channel: "TUTORIAL"
+        text: "Well done. You've completed the example level."
+path:
+  - [2, 4]
+  - [3.7, 4.4]
+  - [7, 4]
+  - [14, 4]
+path_return: []

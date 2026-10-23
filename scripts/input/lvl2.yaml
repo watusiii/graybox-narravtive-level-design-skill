@@ -1,0 +1,197 @@
+project: "OSL Phase"
+level: "K-67 Vertical Slice — Elevator Descent & Core Access"
+metric:
+  unit_m: 1
+  operative_m: 1.8
+  wall: 2x3
+  door: 2x1.2
+speakers:
+  miller:
+    color: "#e7dfc9"
+  kael:
+    color: "#e8b23a"
+  laura:
+    color: "#68d391"
+  terminal:
+    color: "#9a9788"
+notes:
+  - "CONNECTIONS: Entrance from [Level 1: Hangar Intake Elevator Shaft], Exit to [Level 3: Research Sub-Level]."
+  - "CAMERA: fixed oblique 55deg / orthographic, no rotation."
+  - "GATING: Shaft descent requires bypassing dead elevator controls via maintenance ladder and manual winch. Lower sub-level airlock requires dual biometric authorization (Kael's remote relay + Laura's Sec-1 Badge)."
+  - "STORY: Laura descends deeper into the station structure following Kael's live feed. The architecture shifts from industrial hangar to decaying, high-pressure research conduits. Director Miller's broadcasts become frantic, hinting at an autonomous facility lockdown protocol known as 'The Core Aegis'."
+rooms:
+  - id: "shaft"
+    label: "CENTRAL ELEVATOR SHAFT"
+    x: 8
+    y: 0
+    w: 8
+    h: 16
+  - id: "control"
+    label: "SUB-LEVEL CONTROL BOOTH"
+    x: 0
+    y: 4
+    w: 8
+    h: 8
+  - id: "airlock"
+    label: "RESEARCH ANTECHAMBER"
+    x: 16
+    y: 4
+    w: 8
+    h: 8
+features:
+  - type: "door"
+    label: "BOOTH HATCH"
+    x: 8
+    y: 6.5
+    h: 1.5
+    opens_when:
+      descent_started: true
+  - type: "door"
+    label: "RESEARCH AIRLOCK"
+    x: 16
+    y: 7
+    h: 2
+    danger: true
+    opens_when:
+      level2_complete: true
+  - type: "block"
+    label: "EMERGENCY WINCH"
+    x: 3
+    y: 6
+    w: 1.5
+    h: 1.5
+  - type: "block"
+    label: "SERVER RACKS"
+    x: 1.5
+    y: 9.5
+    w: 3
+    h: 1.5
+  - type: "block"
+    label: "MAINTENANCE LADDER"
+    x: 11
+    y: 4
+    w: 1
+    h: 8
+  - type: "wreck"
+    label: "COLLAPSED CAR CAGE"
+    x: 10
+    y: 12
+    w: 4
+    h: 3
+    danger: true
+  - type: "block"
+    label: "DECON BENCH"
+    x: 18
+    y: 6
+    w: 2
+    h: 1
+  - type: "block"
+    label: "SUIT CHARGER"
+    x: 21
+    y: 9.5
+    w: 1.5
+    h: 1.5
+props:
+  - label: "MANUAL OVERRIDE LEVER"
+    x: 3.7
+    y: 6.8
+  - label: "AUDIO LOG — MILLER'S WARNING"
+    x: 2.2
+    y: 10.2
+  - label: "BIOMETRIC SCANNER"
+    x: 15.5
+    y: 6.6
+beats:
+  - n: 1
+    x: 10
+    y: 2.5
+    label: "Descent entry — shaft overview"
+    objective: "Drop through the shaft entry and reach the sub-level control booth."
+    trigger_type: "auto"
+    radius: 2.5
+    set_state:
+      descent_started: true
+    dialogue:
+      - speaker: "kael"
+        name: "KAEL"
+        channel: "COMM-LINK"
+        text: "You're in the vertical maintenance chute. Watch your footing—gravity dampeners on this tier are failing."
+      - speaker: "kael"
+        name: "KAEL"
+        channel: "COMM-LINK"
+        text: "The elevator car is jammed halfway down. You'll need to drop onto the maintenance ladder and clear the blockage manually."
+  - n: 2
+    x: 3.5
+    y: 7
+    label: "Control booth — winching the cage"
+    objective: "Activate the emergency winch in the control booth to clear the shaft."
+    trigger_type: "interact"
+    action_label: "ENGAGE WINCH"
+    radius: 2.0
+    set_state:
+      winch_engaged: true
+    dialogue:
+      - speaker: "laura"
+        name: "LAURA"
+        channel: "SUIT MIC"
+        text: "Winch is rusted solid. Putting my weight into it."
+      - speaker: "kael"
+        name: "KAEL"
+        channel: "COMM-LINK"
+        text: "That's it, crank it! Freeing that cage will drop the debris clear of the lower research airlock."
+      - speaker: "miller"
+        name: "DIRECTOR MILLER"
+        channel: "STATION INTERCOM"
+        text: "Associate Laura. You are tampering with core structural mechanisms. Cease immediately."
+      - speaker: "miller"
+        name: "DIRECTOR MILLER"
+        channel: "STATION INTERCOM"
+        text: "The sub-level houses specimens you are not cleared to perceive. Turn back."
+  - n: 3
+    x: 14.6
+    y: 8
+    label: "Airlock biometrics — opening research sub-level"
+    objective: "Authenticate with your Sec-1 Badge and Kael's relay to open the research antechamber."
+    trigger_type: "interact"
+    action_label: "SWIPE BADGE & RELAY"
+    radius: 2.2
+    requires_state:
+      winch_engaged: true
+    denied_dialogue:
+      - speaker: "terminal"
+        name: "AIRLOCK TERMINAL"
+        channel: "SECURITY SYSTEM"
+        text: "[ CYCLE BLOCKED — DEBRIS IN SHAFT ]"
+      - speaker: "kael"
+        name: "KAEL"
+        channel: "COMM-LINK"
+        text: "Cage is still jammed. Winch is in the control booth, west side."
+    set_state:
+      level2_complete: true
+    dialogue:
+      - speaker: "kael"
+        name: "KAEL"
+        channel: "COMM-LINK"
+        text: "I'm routing my remote handshake into the terminal now. Swipe your badge simultaneously."
+      - speaker: "terminal"
+        name: "AIRLOCK TERMINAL"
+        channel: "SECURITY SYSTEM"
+        text: "[ DUAL AUTHORIZATION CONFIRMED — AIRLOCK CYCLING ]"
+      - speaker: "laura"
+        name: "LAURA"
+        channel: "SUIT MIC"
+        text: "The door's parting. What's down there, Kael?"
+      - speaker: "kael"
+        name: "KAEL"
+        channel: "COMM-LINK"
+        text: "Answers. Or the bottom of the pit. Let's move."
+path:
+  - [10, 2.5]
+  - [9.5, 7.2]
+  - [3.5, 7.0]
+  - [9.5, 7.2]
+  - [10, 2.5]
+  - [13.5, 2.5]
+  - [14.6, 8.0]
+  - [19, 8.0]
+path_return: []
